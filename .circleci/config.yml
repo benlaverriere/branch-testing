@@ -7,7 +7,7 @@ jobs:
         auth:
           username: bookbubcloner
           password: $DOCKER_HUB_PASSWORD
-    resource_class: xsmall
+    resource_class: small
     working_directory: ~/branch-testing
     environment:
       BBWORKSPACE: "/home/circleci"
