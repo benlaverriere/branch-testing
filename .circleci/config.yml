@@ -1,0 +1,20 @@
+version: 2.1
+
+jobs:
+  release_android:
+    docker:
+      - image: cimg/android:2023.08.1
+        auth:
+          username: bookbubcloner
+          password: $DOCKER_HUB_PASSWORD
+    resource_class: xsmall
+    working_directory: ~/branch-testing
+    environment:
+      BBWORKSPACE: "/home/circleci"
+    steps:
+      - run: echo "I am building a release"
+
+workflows:
+  release:
+    jobs:
+      - release_android
